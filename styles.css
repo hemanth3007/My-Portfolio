@@ -1,0 +1,677 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: rgb(0, 0, 33);
+  color: #fff;
+  font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 70px;
+  background-color: rgba(1, 1, 51, 0.96);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+}
+
+nav .left {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+nav .right ul {
+  display: flex;
+  align-items: center;
+}
+
+nav .right ul li {
+  cursor: pointer;
+  list-style: none;
+}
+
+nav .right ul a {
+  margin: 0 25px;
+  font-size: 0.95rem;
+  font-weight: 550;
+  color: #ddd;
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 4px;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+nav .right ul a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background: linear-gradient(90deg, #7c3aed, #c4a5ff);
+  transition: width 0.2s ease;
+}
+
+nav .right ul a:hover {
+  cursor: pointer;
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+nav .right ul a:hover::after {
+  width: 100%;
+}
+
+.first {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6rem;
+  min-height: calc(100vh - 70px);
+  padding: 0 8vw;
+  margin-top: 0;
+}
+
+.first .leftSection {
+  margin-left: 0;
+  margin-right: 0;
+  position: relative;
+}
+
+.first .leftSection::before {
+  content: "";
+  position: absolute;
+  inset: -18%;
+  border-radius: 30px;
+  background: radial-gradient(
+    circle at top,
+    rgba(124, 58, 237, 0.8),
+    transparent 65%
+  );
+  opacity: 0.45;
+  filter: blur(6px);
+  z-index: -1;
+}
+
+.first .leftSection img {
+  width: 22rem;
+  height: 26rem;
+  object-fit: fill;
+  border-radius: 32px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.75);
+  border: 2px solid rgba(255, 255, 255, 0.05);
+}
+
+.first .rightSection {
+  width: 36%;
+  font-size: clamp(2.2rem, 3vw + 1rem, 3rem);
+  line-height: 1.3;
+}
+
+.first .rightSection span {
+  color: blueviolet;
+}
+
+.first .rightSection > div {
+  margin-top: 0.4rem;
+}
+
+.social-media {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -1rem;
+  margin-bottom: 3rem;
+}
+
+.social-media .bottomSection {
+  display: flex;
+  align-items: center;
+  padding: 0.8rem 1.6rem;
+  border-radius: 999px;
+  background: rgba(6, 6, 40, 0.96);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.social-media img {
+  width: 40px;
+  height: 40px;
+  margin: 0 15px;
+  cursor: pointer;
+  filter: grayscale(20%);
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.social-media img:hover {
+  transform: translateY(-2px) scale(1.08);
+  filter: grayscale(0%);
+}
+
+.about-me {
+  width: 90%;
+  margin: 100px auto;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.about-me .content {
+  font-size: 1.3rem;
+  line-height: 1.7;
+  text-align: justify;
+}
+
+.about-me img {
+  margin: 50px 0;
+  width: 650px;
+  height: 900px;
+  border-radius: 2rem;
+  object-fit: cover;
+}
+
+.img-content {
+  display: flex;
+}
+
+.img-content .List {
+  display: flex;
+}
+
+.img-content .List ul {
+  list-style: none;
+  font-size: 1.5rem;
+  line-height: 5rem;
+  margin-left: 8rem;
+}
+
+.img-content .List ul i {
+  color: blueviolet;
+  margin-right: 1rem;
+}
+
+.img-content .rightSection h3 {
+  margin: 3rem 0 2rem 8rem;
+  font-size: 3rem;
+  color: blueviolet;
+}
+
+.Education p {
+  font-size: 1.5rem;
+  margin-left: 8rem;
+}
+
+.be {
+  margin-top: 2rem;
+}
+
+.skills p {
+  font-size: 1.5rem;
+  margin: 2rem 0 0 0;
+  text-align: justify;
+}
+
+.rows {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.progress-bar {
+  margin-top: 3rem;
+  width: 40%;
+}
+
+.skill-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.skill-bar {
+  height: 15px;
+  background: blueviolet;
+  position: relative;
+  margin-top: 1rem;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.skill-bar::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  background: #dce8f7;
+}
+
+.w-100::after {
+  width: 0;
+}
+.w-90::after {
+  width: 10%;
+}
+.w-85::after {
+  width: 15%;
+}
+.w-80::after {
+  width: 20%;
+}
+.w-75::after {
+  width: 25%;
+}
+.w-70::after {
+  width: 30%;
+}
+
+.tools {
+  display: flex;
+  align-items: center;
+  height: auto;
+}
+
+.tool-img p {
+  font-size: 1.2rem;
+  margin-left: 2rem;
+}
+
+.tool-img img {
+  width: 4rem;
+  height: 4rem;
+  margin: 2rem;
+}
+
+.project h3 {
+  margin-top: 2rem;
+  font-size: 2.5rem;
+  color: blueviolet;
+}
+
+.project p {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  text-align: justify;
+}
+
+.resume {
+  text-align: center;
+  margin: 5rem 0;
+  font-size: 2rem;
+}
+
+.download-btn {
+  display: inline-block;
+  padding: 12px 25px;
+  background: #7c3aed;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 14px rgba(124, 58, 237, 0.4);
+}
+
+.download-btn:hover {
+  background: #9d5cff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(157, 92, 255, 0.5);
+}
+
+.contact-section {
+  width: 90%;
+  max-width: 700px;
+  margin: 80px auto;
+  text-align: center;
+}
+
+.contact-section h1 {
+  margin-bottom: 10px;
+}
+
+.contact-text {
+  font-size: 1.1rem;
+  color: #e2e2ff;
+  margin-bottom: 25px;
+}
+
+.contact-form {
+  background: rgba(5, 5, 40, 0.95);
+  border-radius: 16px;
+  padding: 25px 20px 30px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+}
+
+.form-group {
+  text-align: left;
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #4b4b82;
+  background: rgba(10, 10, 45, 0.9);
+  color: #fff;
+  font: inherit;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #9d5cff;
+}
+
+@media (max-width: 1024px) {
+  .first {
+    margin-top: 120px;
+    padding: 0 2rem;
+    gap: 3rem;
+  }
+
+  .first .leftSection {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .first .leftSection img {
+    width: 18rem;
+  }
+
+  .first .rightSection {
+    width: 45%;
+    font-size: 2.4rem;
+    line-height: 3.2rem;
+  }
+
+  .about-me img {
+    width: 100%;
+    height: auto;
+  }
+
+  .img-content {
+    gap: 2rem;
+  }
+
+  .img-content .List ul {
+    margin-left: 4rem;
+  }
+
+  .Education p {
+    margin-left: 4rem;
+  }
+
+  .project p {
+    font-size: 1.3rem;
+  }
+
+  .tool-img img {
+    width: 3rem;
+    height: 3rem;
+    margin: 1.5rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  /* Navbar: keep in one line but tighter */
+  nav {
+    justify-content: space-between;
+    padding: 0 1.5rem;
+  }
+
+  nav .right ul a {
+    margin: 0 10px;
+    font-size: 0.9rem;
+  }
+
+  /* Hero section */
+  .first {
+    gap: 4rem;
+    margin-top: 140px;
+  }
+
+  .first .leftSection {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .first .rightSection {
+    width: 45%;
+    font-size: 2.3rem;
+    line-height: 3.1rem;
+  }
+
+  /* About section */
+  h1 {
+    font-size: 3rem;
+  }
+
+  .about-me .content {
+    font-size: 1.3rem;
+  }
+
+  .img-content .List ul {
+    font-size: 1.2rem;
+    line-height: 3.5rem;
+    margin-left: 4rem;
+  }
+
+  .Education p {
+    font-size: 1.3rem;
+    margin-left: 4rem;
+  }
+
+  /* Skills */
+  .skills p {
+    font-size: 1.3rem;
+  }
+
+  /* Tools */
+  .tool-img img {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  /* --- NAVBAR --- */
+  nav {
+    flex-direction: column;
+    height: auto;
+    padding: 0.7rem 0;
+    gap: 0.4rem;
+  }
+
+  nav .left {
+    font-size: 1.2rem;
+  }
+
+  nav .right ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  nav .right ul a {
+    margin: 4px 10px;
+    font-size: 0.85rem;
+  }
+
+  /* --- HERO (FIRST SECTION) --- */
+  .first {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 120px;
+  }
+
+  .first .leftSection {
+    margin: 0;
+  }
+
+  /* Make photo fully visible & smaller */
+  .first .leftSection img {
+    width: 220px;
+    height: auto; /* ✅ no more cropped hair */
+    object-fit: contain; /* show full image */
+    border-radius: 1.5rem;
+  }
+
+  .first .rightSection {
+    width: 100%;
+    font-size: 2rem;
+    line-height: 2.7rem;
+    margin-top: 1.5rem;
+  }
+
+  /* --- SOCIAL ICONS --- */
+  .social-media {
+    margin-top: 30px;
+  }
+
+  .social-media img {
+    width: 30px;
+    height: 30px;
+    margin: 0 10px;
+  }
+
+  /* --- ABOUT PAGE --- */
+  .about-me {
+    width: 92%;
+    margin: 60px auto;
+  }
+
+  h1 {
+    font-size: 2.4rem;
+  }
+
+  .about-me .content {
+    font-size: 1.1rem;
+  }
+
+  .img-content {
+    flex-direction: column; /* image on top, text below */
+    align-items: center;
+  }
+
+  .about-me img {
+    width: 70%;
+    max-width: 260px;
+    height: auto; /* ✅ no giant image */
+    margin: 25px 0;
+  }
+
+  .img-content .List {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .img-content .List ul {
+    margin-left: 0;
+    font-size: 1.05rem;
+    line-height: 2.4rem;
+  }
+
+  .img-content .rightSection h3 {
+    margin: 2rem 0 1rem 0;
+    font-size: 1.8rem;
+  }
+
+  .Education p {
+    margin-left: 0;
+    font-size: 1.05rem;
+  }
+
+  /* --- SKILLS SECTION --- */
+  .skills p {
+    font-size: 1.2rem;
+  }
+
+  .rows {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .progress-bar {
+    width: 100%;
+    margin-top: 1.2rem;
+  }
+
+  /* --- TOOLS SECTION --- */
+  .tools {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tool-img p {
+    font-size: 1rem;
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .tool-img img {
+    width: 2.6rem;
+    height: 2.6rem;
+    margin: 1rem 0;
+  }
+
+  /* --- PROJECT / RESUME TEXT --- */
+  .project h3 {
+    font-size: 1.8rem;
+  }
+
+  .project p {
+    font-size: 1.1rem;
+  }
+
+  .resume {
+    font-size: 1.5rem;
+    margin: 3rem 0;
+  }
+
+  .download-btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}
+
+/* =========================================
+   ✅ VERY SMALL PHONES (<= 480px)
+   ========================================= */
+@media (max-width: 480px) {
+  .first .rightSection {
+    font-size: 1.7rem;
+    line-height: 2.4rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .about-me .content {
+    font-size: 1rem;
+  }
+
+  .Education p,
+  .project p {
+    font-size: 1rem;
+  }
+}
